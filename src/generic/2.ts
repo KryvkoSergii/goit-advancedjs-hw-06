@@ -11,7 +11,9 @@ type AllType = {
   weight: number
 }
 
-function compare (top, bottom): AllType {
+type AllTypeFields = Pick<AllType, keyof AllType>
+
+function compare (top: AllTypeFields, bottom: AllTypeFields): AllType {
   return {
     name: top.name,
     color: top.color,
